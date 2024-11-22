@@ -26,6 +26,7 @@ function App() {
       </h1>
 
       <form onSubmit={submitHandler} className="bg-slate-300 h-[200px]">
+
         <input
           type="text"
           placeholder="Enter name"
@@ -34,7 +35,11 @@ function App() {
           onChange={(e) => setfname(e.target.value)}
           value={fname}
         />
+
+
+
         <input
+
           type="text"
           placeholder="Enter username"
           className="p-[0.5rem] rounded-sm  border mr-3 "
