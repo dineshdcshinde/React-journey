@@ -23,12 +23,14 @@ const AddTask = ({inital, setInital, tasks, setTasks}) => {
     const newTasks = {
       id: uniqid(),
       title: inital.toLowerCase(),
+      checked:false
     };
 
     setTasks([...tasks, newTasks]);
     setInital("");
   };
-
+  // Adding the tasks to the local storage
+  localStorage.setItem("routine", JSON.stringify(tasks))
 
   return (
     <form

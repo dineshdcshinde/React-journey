@@ -9,7 +9,13 @@ import AddTask from "./AddTask";
 
 function Todo() {
   const [inital, setInital] = useState("");
-  const [tasks, setTasks] = useState([]);
+  // const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(() => {
+    let rawData = localStorage.getItem("routine");
+    return rawData ? JSON.parse(rawData) : [];
+  });
+  
+
 
   return (
     <>
