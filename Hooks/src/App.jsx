@@ -2,7 +2,9 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Clean from "./components/UseEffect/Clean";
+import PikachuCard from "./components/UseEffect/PikachuCard";
+// import Clean from "./components/UseEffect/Clean";
+// import NotToFetch from "./components/UseEffect/NotToFetch";
 // import ExampleUseEffect from "./components/UseEffect/ExampleUseEffect";
 // import Challenge from "./components/UseEffect/Challenge";
 // import ContactForm from './components/Contactform'
@@ -21,7 +23,9 @@ function App() {
       {/* <ContactForm/> */}
       {/* <ExampleUseEffect /> */}
       {/* <Challenge/> */}
-      <Clean />
+      {/* <Clean /> */}
+      {/* <NotToFetch/> */}
+      <PikachuCard/>
     </>
   );
 }
