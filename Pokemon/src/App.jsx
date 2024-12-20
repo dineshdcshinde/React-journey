@@ -1,15 +1,12 @@
-import React from "react";
-import "./App.css";
-import FetchThen from "./Components/FetchThen";
-import AsyncAwait from "./Components/AsyncAwait";
+import React from 'react'
+import Pokemon from './Components/Pokemon'
 
 function App() {
   return (
     <>
-      {/* <FetchThen /> */}
-      <AsyncAwait/>
+    <Pokemon />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
