@@ -2,7 +2,9 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import PikachuCard from "./components/UseEffect/PikachuCard";
+import Forwardref from "./Hooks/Forwardref";
+// import PikachuCard from "./components/UseEffect/PikachuCard";
+// import Useref from "./Hooks/Useref";
 // import Clean from "./components/UseEffect/Clean";
 // import NotToFetch from "./components/UseEffect/NotToFetch";
 // import ExampleUseEffect from "./components/UseEffect/ExampleUseEffect";
@@ -25,7 +27,9 @@ function App() {
       {/* <Challenge/> */}
       {/* <Clean /> */}
       {/* <NotToFetch/> */}
-      <PikachuCard/>
+      {/* <PikachuCard/> */}
+      {/* <Useref /> */}
+      <Forwardref />
     </>
   );
 }
