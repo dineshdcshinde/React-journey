@@ -3,6 +3,9 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Forwardref from "./Hooks/Forwardref";
+import UseId from "./Hooks/UseId";
+import { Propdrilling } from "./Hooks/Propdrilling";
+import {ParentContext} from "./Hooks/ParentContext";
 // import PikachuCard from "./components/UseEffect/PikachuCard";
 // import Useref from "./Hooks/Useref";
 // import Clean from "./components/UseEffect/Clean";
@@ -29,7 +32,10 @@ function App() {
       {/* <NotToFetch/> */}
       {/* <PikachuCard/> */}
       {/* <Useref /> */}
-      <Forwardref />
+      {/* <Forwardref /> */}
+      {/* <UseId/> */}
+      {/* <Propdrilling /> */}
+      <ParentContext/>
     </>
   );
 }

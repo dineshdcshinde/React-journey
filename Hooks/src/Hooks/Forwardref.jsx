@@ -5,11 +5,21 @@ const Forwardref = () => {
   const username = useRef(null);
   const password = useRef(null);
 
-  const InputLoginInfo = forwardRef((props, ref) => {
+  // const InputLoginInfo = forwardRef((props, ref) => {
+  //   return (
+  //     <input type={props.type} placeholder={props.placeholder} ref={ref} className={props.className} />
+  //   );
+  // });
+  const InputLoginInfo = (props) => {
     return (
-      <input type={props.type} placeholder={props.placeholder} ref={ref} className={props.className} />
+      <input
+        type={props.type}
+        placeholder={props.placeholder}
+        ref={props.ref}
+        className={props.className}
+      />
     );
-  });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
