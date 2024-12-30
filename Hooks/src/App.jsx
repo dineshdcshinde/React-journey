@@ -2,10 +2,14 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Forwardref from "./Hooks/Forwardref";
-import UseId from "./Hooks/UseId";
-import { Propdrilling } from "./Hooks/Propdrilling";
-import {ParentContext} from "./Hooks/ParentContext";
+// import UseReducerBestPractice from "./Hooks/UseReducerBestPractice";
+// import UseMemo from "./Hooks/React Memo/UseMemo";
+import UseMemoOrg from "./Hooks/UseMemo/UseMemoOrg";
+// import UseReducer from "./Hooks/UseReducer";
+// import Forwardref from "./Hooks/Forwardref";
+// import UseId from "./Hooks/UseId";
+// import { Propdrilling } from "./Hooks/Propdrilling";
+// import {ParentContext} from "./Hooks/ParentContext";
 // import PikachuCard from "./components/UseEffect/PikachuCard";
 // import Useref from "./Hooks/Useref";
 // import Clean from "./components/UseEffect/Clean";
@@ -35,7 +39,12 @@ function App() {
       {/* <Forwardref /> */}
       {/* <UseId/> */}
       {/* <Propdrilling /> */}
-      <ParentContext/>
+      {/* <ParentContext/> */}
+      {/* <UseReducer /> */}
+      {/* <UseReducerBestPractice />
+       */}
+       {/* <UseMemo/> */}
+      <UseMemoOrg/>
     </>
   );
 }
