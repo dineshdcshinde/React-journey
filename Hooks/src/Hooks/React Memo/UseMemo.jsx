@@ -3,6 +3,10 @@ import { RenderChild } from "./RenderChild";
 
 const UseMemo = () => {
   const [count, setCount] = useState(0);
+  const bioData = {
+    name: "John Doe",
+    age: 30,
+  };
 
   return (
     <>
@@ -17,6 +21,12 @@ const UseMemo = () => {
         </button>
 
         <RenderChild />
+        {/* <RenderChild data={bioData} /> */}
+        {/*
+            If we pass the object in the "React.memo" hook, then that will be cause
+            issue as that will re-render the componenet to avoid that we are using 
+            the "useMemo" hook. That hook, has the power to avoid rendering. 
+        */}
       </div>
     </>
   );

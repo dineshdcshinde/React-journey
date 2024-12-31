@@ -2,9 +2,10 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import UseCallback from "./Hooks/UseCallback/UseCallback";
 // import UseReducerBestPractice from "./Hooks/UseReducerBestPractice";
 // import UseMemo from "./Hooks/React Memo/UseMemo";
-import UseMemoOrg from "./Hooks/UseMemo/UseMemoOrg";
+// import UseMemoOrg from "./Hooks/UseMemo/UseMemoOrg";
 // import UseReducer from "./Hooks/UseReducer";
 // import Forwardref from "./Hooks/Forwardref";
 // import UseId from "./Hooks/UseId";
@@ -43,8 +44,9 @@ function App() {
       {/* <UseReducer /> */}
       {/* <UseReducerBestPractice />
        */}
-       {/* <UseMemo/> */}
-      <UseMemoOrg/>
+      {/* <UseMemo/> */}
+      {/* <UseMemoOrg/> */}
+      <UseCallback/>
     </>
   );
 }
