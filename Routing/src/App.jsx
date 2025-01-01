@@ -6,6 +6,8 @@ import Service from "./pages/Service";
 import Contact from "./pages/Contact";
 import Movie from "./pages/Movie";
 import AppLayout from "./component/AppLayout";
+import ErrrorPage from "./pages/ErrorPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   // const router = createBrowserRouter([
@@ -47,6 +49,7 @@ function App() {
             <Route path="service" element={<Service />} />
             <Route path="contact" element={<Contact />} />
             <Route path="movie" element={<Movie />} />
+            <Route path="*" element={<ErrorPage />} />
           </Route>
         </Routes>
       </div>
