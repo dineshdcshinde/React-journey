@@ -1,0 +1,147 @@
+/* General Styles */
+
+/* Contact Container */
+.contact-container {
+  display: flex;
+  flex-direction: row; /* Default: Side by side */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5rem;
+}
+
+/* Contact Image */
+.contact-container .contact-image {
+  flex: 1;
+  background-image: url("https://www.jotform.com/blog/wp-content/uploads/2019/09/automated-crm-dashboard-768x556.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Contact Form */
+.contact-form {
+  flex: 1;
+  padding: 3rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form h2 {
+  margin-bottom: 1rem;
+  color: #333333;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  font-size: 2rem;
+  color: #555555;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  font-size: 2rem;
+  color: #333333;
+  background-color: #f7f7f7;
+  outline: none;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007bff;
+  background-color: #ffffff;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+
+/* For screen widths <= 768px (Top-Bottom Layout) */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Image on top, form below */
+  }
+
+  .contact-container .contact-image {
+    height: 200px; /* Adjust image height */
+    border-radius: 10px 10px 0 0; /* Rounded corners at the top */
+  }
+
+  .contact-form {
+    padding: 2rem;
+  }
+
+  .contact-form h2 {
+    font-size: 2rem;
+  }
+
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 1.5rem;
+  }
+}
+
+/* For screen widths > 768px (Side by Side Layout) */
+@media (min-width: 769px) and (max-width: 1380px) {
+  .contact-container {
+    flex-direction: row; /* Image and form side by side */
+  }
+
+  .contact-container .contact-image {
+    height: auto; /* Image adjusts with content */
+    border-radius: 10px 0 0 10px; /* Rounded corners on the left */
+  }
+
+  .contact-form {
+    padding: 3rem;
+  }
+
+  .contact-form h2 {
+    font-size: 3rem;
+  }
+
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 2rem;
+  }
+}

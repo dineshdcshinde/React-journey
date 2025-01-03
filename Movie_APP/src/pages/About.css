@@ -1,0 +1,99 @@
+/* About.css */
+.about-container {
+  max-width: 100%;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-header {
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.about-header h1 {
+  font-size: 4rem;
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 3rem;
+  color: #555;
+  margin-top: 10px;
+  font-family: cursive;
+}
+
+.about-main {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-section {
+  height: 60%;
+  width: 30%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  margin-top: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 2rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #555;
+}
+
+.about-main::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.about-section:hover {
+  cursor: pointer;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-section {
+    flex: 1 1 calc(50% - 20px); /* Two-column layout on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    flex: 1 1 100%; /* Full-width layout on smaller screens */
+  }
+}
