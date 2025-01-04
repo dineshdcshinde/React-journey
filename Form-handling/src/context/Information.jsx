@@ -11,7 +11,8 @@ function Information(props) {
   return (
     <div className="bg-[#2a2a2a] w-full h-[100vh] text-white">
       {/* wrap the childrent with the dataContext.provider */}
-      <dataContext.Provider value={[data, setData]}>{props.children}</dataContext.Provider>
+      <dataContext.Provider value={[data, setData]}>
+        {props.children}</dataContext.Provider>
     </div>
   );
 }
