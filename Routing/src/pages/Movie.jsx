@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useLoaderData } from "react-router-dom";
 
 const Movie = () => {
-  // https://www.omdbapi.com/?s=Batman&apikey=b7c584b3
+  // https://www.omdbapi.com/?s=Batman&apikey=b7c584b4
 
   const moviesData = useLoaderData(); // Retrieves data from the loader
 
