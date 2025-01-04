@@ -19,3 +19,7 @@ const PokemondCards = ({ key, data }) => {
 };
 
 export default PokemondCards;
+
+
+
+

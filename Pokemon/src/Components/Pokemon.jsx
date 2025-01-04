@@ -37,8 +37,12 @@ function Pokemon() {
 
   // Search Functionality
   const searchPokemon = pokemon.filter((currPokemon) => {
-    currPokemon.name.toLowerCase().includes(search.toLowerCase());
+    return currPokemon.name.toLowerCase().includes(search.toLowerCase());
   });
+
+  // const searchPokemon = pokemon.filter((currPokemon) => {
+  //   return currPokemon.name.toLowerCase().includes(search.toLowerCase());
+  // });
 
   if (loading)
     return <h1 className="font-bold text-2xl text-center pt-4 ">Loading...</h1>;
@@ -52,7 +56,7 @@ function Pokemon() {
 
   return (
     <>
-      <div className="wrapper w-full bg-[#3e3e3e] overflow-hidden">
+      <div className="wrapper w-full bg-[#3e3e3e] h-[100%] overflow-hidden">
         <h1 className="text-4xl text-center text-white font-bold pt-4">
           Pokemon Card's
         </h1>
@@ -69,7 +73,11 @@ function Pokemon() {
         </div>
 
         <div className="pokemon-container flex  flex-wrap w-[100%] justify-between gap-4 bg-[#3e3e3e] pt-4 scroll-smooth">
-          {pokemon.map((currPokemon, index) => {
+          {/* {pokemon.map((currPokemon, index) => { */}
+          {/* it is just render all the things firstly then when we search on the at that time it will only
+              pick that and just serve that pokemon card that u searched
+          */}
+          {searchPokemon.map((currPokemon, index) => {
             return <PokemondCards key={index} data={currPokemon} />;
           })}
         </div>
