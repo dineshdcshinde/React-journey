@@ -47,11 +47,6 @@ const Footer = () => {
           <hr />
         </div>
       </div>
-      <div className="f-design">
-        <div className="f-design-txt">
-          <p>Design and Code by Thapa Technical</p>
-        </div>
-      </div>
     </footer>
   );
 };

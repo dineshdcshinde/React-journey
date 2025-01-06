@@ -11,6 +11,7 @@ import { GetMovies } from "./api/GetMovies";
 import { GetMovieDetail } from "./api/GetMovieDetail";
 import { MovieDetails } from "./components/UI/MovieDetails";
 
+
 function App() {
   const router = createBrowserRouter([
     {
