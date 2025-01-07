@@ -1,6 +1,25 @@
-import React from "react";
+import { useContext, useEffect, useState } from "react";
+import { ProductContext } from "../../utility/Context";
+import { Link, useLocation } from "react-router-dom";
+import instance from "../../utility/Axios";
 
 const Navbar = () => {
+  const [product] = useContext(ProductContext);
+ 
+
+  // removing the unique category
+  let distinctCategory =
+    product && product.reduce((acc, currVal) => [...acc, currVal.category], []);
+
+  distinctCategory = [...new Set(distinctCategory)];
+
+  // creating unique color
+  const color = () => {
+    return ` rgba(${Math.floor(Math.random() * 255)},${Math.floor(
+      Math.random() * 255
+    )},${Math.floor(Math.random() * 255)},1)`;
+  };
+
   return (
     <>
       <nav className="w-[20%]  h-screen pt-4 pl-5  border-r-gray-200 border-r-[2px]">
@@ -8,22 +27,22 @@ const Navbar = () => {
           Add Products
         </button>
 
-        <ul className="">
-          <li className="text-2xl mb-3 flex items-center">
-            <span className=" inline-block h-[20px] w-[20px] bg-[#b93232] rounded-full mr-3"></span>
-            Category 1
-          </li>
-          <li className="text-2xl mb-3 flex items-center">
-            <span className=" inline-block h-[20px] w-[20px] bg-[#244db6] rounded-full mr-3"></span>
-            Category 2
-          </li>
-          <li className="text-2xl mb-3 flex items-center">
-            <span className=" inline-block h-[20px] w-[20px] bg-[#bb2dd1] rounded-full mr-3"></span>
-            Category 3
-          </li>
+        <ul>
+          {distinctCategory.map((category, index) => (
+            <Link
+              to={`/?category=${category}`}
+              key={index}
+              className="text-2xl mb-3 flex items-center"
+            >
+              <span
+                className="inline-block h-[20px] w-[20px] rounded-full mr-3"
+                style={{ backgroundColor: color() }}
+              ></span>
+              {category}
+            </Link>
+          ))}
         </ul>
       </nav>
-      ;
     </>
   );
 };
