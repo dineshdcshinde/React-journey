@@ -5,6 +5,8 @@ import Form from "./Form";
 const Posts = () => {
   const [posts, setPosts] = useState([]);
 
+  const [updatePostData, setUpdatePostData] = useState({});
+
   const getPostsData = async () => {
     try {
       let { data } = await getPost();
@@ -18,6 +20,7 @@ const Posts = () => {
     getPostsData();
   }, []);
 
+  // Delete functionality
   const handleDelete = async (id) => {
     try {
       let response = await deletePost(id);
@@ -33,31 +36,39 @@ const Posts = () => {
     }
   };
 
-  console.log(posts);
+  // Update functionality
+
+  const handleUpdate = (currElement) => setUpdatePostData(currElement);
 
   return (
     <>
       <div className="postContainer flex flex-wrap justify-between items-center p-4">
-        <Form posts={posts} setPosts={setPosts} />
-
-        {/* <button>Add</button> */}
+        <Form
+          posts={posts}
+          setPosts={setPosts}
+          updatePostData={updatePostData}
+          setUpdatePostData={setUpdatePostData}
+        />
 
         <ol className="w-full flex flex-wrap justify-between">
           {posts &&
-            posts.map((currElement, i) => (
+            posts.map((currElement) => (
               <li
-                key={i}
+                key={currElement.id}
                 className="bg-[#474747] text-white m-2 p-4 rounded-md shadow-md w-full sm:w-[45%] lg:w-[30%] flex flex-col justify-between"
               >
                 <div>
-                  <h1 className="text-xl font-bold mb-2">{i}</h1>
+                  <h1 className="text-xl font-bold mb-2">{currElement.id}</h1>
                   <h2 className="text-lg font-semibold mb-2">
                     {currElement.title}
                   </h2>
                   <p className="text-sm mb-4">{currElement.body}</p>
                 </div>
                 <div className="flex justify-between mt-4">
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <button
+                    onClick={() => handleUpdate(currElement)}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
                     Edit
                   </button>
                   <button

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { postData } from "../utility/PostAPI";
 
-const Form = ({ posts, setPosts }) => {
+const Form = ({ posts, setPosts, updatePostData, setUpdatePostData }) => {
   const [addData, setAddData] = useState({
     title: "",
     body: "",
@@ -16,17 +16,24 @@ const Form = ({ posts, setPosts }) => {
         [name]: value,
       };
     });
-
-    // setAddData();
   };
 
-  //   AddPostData
+  // Edit functionality if updatePostData has the data then it will run otherwise not
+
+  useEffect(() => {
+    updatePostData &&
+      setAddData({
+        title: updatePostData.title || "",
+        body: updatePostData.body || "",
+      });
+  }, [updatePostData]);
 
   const addPostData = async () => {
     try {
       let res = await postData(addData);
+      console.log(res);
       if (res.status === 201) {
-        setPosts([...posts, res.posts]);
+        setPosts([...posts, res.data]);
       }
 
       setAddData({ title: "", body: "" });
@@ -48,7 +55,6 @@ const Form = ({ posts, setPosts }) => {
       </h2>
       <div className="formContainer w-full flex justify-center items-center mb-4">
         <form
-       
           onSubmit={handleSubmit}
           className="bg-gray-700 text-white shadow-md rounded-lg w-full max-w-lg p-6"
         >
@@ -57,13 +63,13 @@ const Form = ({ posts, setPosts }) => {
               className="block text-gray-300 text-sm font-bold mb-2"
               htmlFor="title"
             >
-              Title
+              title
             </label>
 
             <input
               type="text"
               id="title"
-              placeholder="Enter Title"
+              placeholder="Enter title"
               name="title"
               value={addData.title}
               onChange={handleInputChange}
