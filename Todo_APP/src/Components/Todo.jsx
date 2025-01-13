@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import uniqid from "uniqid";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { LuDelete } from "react-icons/lu";
 
+import { dataContext } from "../context/Context";
+
 function Todo() {
   const [title, setTitle] = useState("");
 
-  const [tasks, setTasks] = useState([]);
+  const [task, setTasks] = useContext(dataContext);
+
+  // const [tasks, setTasks] = useState([]);
 
   JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -25,8 +29,7 @@ function Todo() {
     setTitle("");
   };
 
-
-  function deleteHandler(i){
+  function deleteHandler(i) {
     let updatedTasks = [...tasks];
     updatedTasks.splice(i, 1);
     setTasks(updatedTasks);
@@ -64,7 +67,7 @@ function Todo() {
             >
               <span>{task.title}</span>
 
-              <LuDelete onClick={()=>deleteHandler(task.id)} />
+              <LuDelete onClick={() => deleteHandler(task.id)} />
             </li>
           ))}
         </ul>
